@@ -1,0 +1,65 @@
+body {
+	background-color: black;
+	color: yellow;
+	font-size: 20px;
+	font-family: 'Oswald', sans-serif;
+}
+
+.slideshow {
+	max-width: 1000px;
+	position: relative;
+	margin: auto;
+}
+
+.slides {
+	display: none;
+}
+
+#previous, #next {
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	padding: 10px;
+	color: white;
+}
+
+#next {
+	right: 0%;
+}
+
+#previous:hover, #next:hover {
+	background-color: rgba(0, 0, 0, .8);
+}
+
+.number, .text {
+	color: white;
+	position: absolute;
+}
+
+.text {
+	bottom: 5%;
+	width: 100%;
+	text-align: center;
+}
+
+.image {
+	width: 100%;
+}
+
+.container {
+	text-align: center;
+}
+
+.dot {
+	cursor: pointer;
+	height: 15px;
+	width: 15px;
+	margin: 0px 5px;
+	background-color: violet;
+	border-radius: 50%;
+	display: inline-block;
+}
+
+.active, .dot:hover {
+	background-color: orange;
+}
