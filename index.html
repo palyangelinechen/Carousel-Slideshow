@@ -3,39 +3,18 @@
 	<head>
 		<link href = "styles.css" rel = "stylesheet" type = "text/css">
 		<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
-		<title>Carousel Slideshow</title>
+		<title></title>
 	</head>
 	<body>
 		<div class = "slideshow">
-			<div class = "slides fade">
-				<div class = "number">1 / 4</div>
-				<img class = "image" src = "http://www.startrek.com/uploads/assets/db_articles/9d831a8381f294838bb7eb8bd2e5f884ca377be1.jpg" />
-				<div class = "text">The Original Series</div>
-			</div>
-			<div class = "slides fade">
-				<div class = "number">2 / 4</div>
-				<img class = "image" src = "http://www.startrek.com/legacy_media/images/200303/tng-148-the-enterprise-prepare/320x240.jpg" />
-				<div class = "text">The Next Generation</div>
-			</div>
-			<div class = "slides fade">
-				<div class = "number">3 / 4</div>
-				<img class = "image" src = "http://www.startrek.com/legacy_media/images/200509/ds9-401-wormhole-and-ds9/320x240.jpg" />
-				<div class = "text">Deep Space Nine</div>
-			</div>
-			<div class = "slides fade">
-				<div class = "number">4 / 4</div>
-				<img class = "image" src = "http://www.startrek.com/legacy_media/images/200303/voy-214-the-planetoid-voyager/320x240.jpg" />
-				<div class = "text">Voyager</div>
-			</div>
-			<a id = "previous">&#10094;</a>
-			<a id = "next">&#10095;</a>
+			<img class = "slide image1" src = "http://www.startrek.com/uploads/assets/db_articles/9d831a8381f294838bb7eb8bd2e5f884ca377be1.jpg" />
+			<img class = "slide image2" src = "http://www.startrek.com/legacy_media/images/200303/tng-148-the-enterprise-prepare/320x240.jpg" />
+			<img class = "slide image3" src = "http://www.startrek.com/legacy_media/images/200509/ds9-401-wormhole-and-ds9/320x240.jpg" />
+			<img class = "slide image4" src = "http://www.startrek.com/legacy_media/images/200303/voy-214-the-planetoid-voyager/320x240.jpg" />
 		</div>
-		<br>
 		<div class = "container">
-			<span class = "dot" id = "slide1"></span>
-			<span class = "dot" id = "slide2"></span>
-			<span class = "dot" id = "slide3"></span>
-			<span class = "dot" id = "slide4"></span>
+			<button id = "previous">Previous</button>
+			<button id = "next">Next</button>
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script src = "script.js"></script>

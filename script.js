@@ -7,54 +7,57 @@ $(document).ready(function() {
 	nextbutton.on("click", function() {
 		next();
 	})
-	let slide1 = $("#slide1");
-	slide1.on("click", function() {
-		changeslide(1);
-	})
-	let slide2 = $("#slide2");
-	slide2.on("click", function() {
-		changeslide(2);
-	})
-	let slide3 = $("#slide3");
-	slide3.on("click", function() {
-		changeslide(3);
-	})
-	let slide4 = $("#slide4");
-	slide4.on("click", function() {
-		changeslide(4);
-	})
-	let index = 1;
+	let slides = $(".slide");
+	let index = 0;
+	let previousboolean = false;
+	let nextboolean = false;
 	showslide();
 
 	function previous() {
 		index -= 1;
+		previousboolean = true;
+		slides.removeClass("animation1");
+		slides.removeClass("animation2");
 		showslide();
 	}
 
 	function next() {
 		index += 1;
-		showslide();
-	}
-
-	function changeslide(number) {
-		index = number;
+		nextboolean = true;
+		slides.removeClass("animation1");
+		slides.removeClass("animation2");
 		showslide();
 	}
 
 	function showslide() {
-		let slides = $(".slides");
-		let dots = $(".dot");
-		if (index > slides.length) {
-			index = 1;
-		}
-		if (index < 1) {
-			index = slides.length;
-		}
+		index = checkindex(index);
 		slides.hide();
-		dots.removeClass("active");
-		slides.eq(index - 1).show();
-		dots.eq(index - 1).addClass("active");
-		// index++;
-		// setTimeout(showslide, 2000);
+		slides.eq(index).show();
+		if (previousboolean === true) {
+			slides.eq(checkindex(index + 1)).addClass("animation2");
+			slides.eq(checkindex(index + 1)).show();
+			slides.eq(index).addClass("animation1");
+			slides.eq(index).show();
+			document.getElementsByClassName("slide")[index].style.zIndex = "4";
+		}
+		if (nextboolean === true) {
+			slides.eq(checkindex(index - 1)).addClass("animation2");
+			slides.eq(checkindex(index - 1)).show();
+			slides.eq(index).addClass("animation1");
+			slides.eq(index).show();
+			document.getElementsByClassName("slide")[index].style.zIndex = "4";
+		}
+		previousboolean = false;
+		nextboolean = false;
+	}
+
+	function checkindex(i) {
+		if (i > slides.length - 1) {
+			return 0;
+		}
+		if (i < 0) {
+			return slides.length - 1;
+		}
+		return i;
 	}
 })
